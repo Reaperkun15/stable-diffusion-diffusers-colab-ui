@@ -1,3 +1,6 @@
+# This fork is being tested to see if it can reduce VRAM usage.
+
+
 # Colab UI for Stable Diffusion
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/oneir0mancer/stable-diffusion-diffusers-colab-ui/blob/main/sd_diffusers_colab_ui.ipynb)
