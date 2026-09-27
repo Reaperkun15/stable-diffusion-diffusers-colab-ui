@@ -54,3 +54,16 @@ class DiffusionPipelineUI(BaseUI):
             import gc
             gc.collect()
             torch.cuda.empty_cache()
+
+#        results = pipe(prompt_embeds = prompt_embeds, 
+#                       negative_prompt_embeds = prompt_neg_embeds, 
+#                       pooled_prompt_embeds = pooled_prompt_embeds, 
+#                       num_inference_steps=self.steps_field.value,
+#                       num_images_per_prompt = self.batch_field.value,
+#                       guidance_scale=self.cfg_field.value, 
+#                       guidance_rescale=self.cfg_rescale,
+#                       generator=g, clip_skip=self.clip_skip,
+#                       height=self.height_field.value, width=self.width_field.value)
+#        
+#        del prompt_embeds, prompt_neg_embeds, pooled_prompt_embeds, negative_pooled_prompt_embeds
+#        return results
