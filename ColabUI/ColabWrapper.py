@@ -38,20 +38,11 @@ class ColabWrapper:
         self.custom_pipeline = custom_pipeline
 
         #TODO we can try catch here, and load file itself if diffusers doesn't want to load it for us
-        self.pipe = loader_func(
-            model_id,
+        self.pipe = loader_func(model_id,
             custom_pipeline=self.custom_pipeline,
-            torch_dtype=torch.float16
-        )
-
+            torch_dtype=torch.float16).to("cuda")
         self.pipe.safety_checker = None
-
-        # testing
-        # VRAM optimization
-        self.pipe.enable_model_cpu_offload()
-        self.pipe.enable_vae_tiling()
-        self.pipe.enable_vae_slicing()
-
+        
         # remove following line if xFormers is not installed or you have PyTorch 2.0 or higher installed
         #self.pipe.enable_xformers_memory_efficient_attention()
 
